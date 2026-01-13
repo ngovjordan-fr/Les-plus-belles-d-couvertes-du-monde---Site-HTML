@@ -5,109 +5,182 @@
     box-sizing: border-box;
 }
 
-/* ANIMATION DU FOND */
 body {
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(270deg, #0f2027, #203a43, #2c5364);
-    background-size: 600% 600%;
-    animation: gradientBG 15s ease infinite;
-    color: white;
-    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #fceabb, #f8b500);
+    color: #3a1e1e;
+    overflow-x: hidden;
+    min-height: 100vh;
+    position: relative;
 }
 
-@keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+/* FLEURS DE CERISIER ANIMÉES */
+@keyframes fall {
+    0% {
+        transform: translateY(-10px) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.sakura-petal {
+    position: fixed;
+    top: -10px;
+    width: 25px;
+    height: 25px;
+    background: url('https://i.ibb.co/2sPsp7Y/sakura-petal.png') no-repeat center/contain;
+    opacity: 0.8;
+    animation-name: fall;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+/* Générer plusieurs pétales avec des animations décalées */
+.sakura-petal:nth-child(1) {
+    left: 5%;
+    animation-duration: 12s;
+    animation-delay: 0s;
+}
+.sakura-petal:nth-child(2) {
+    left: 20%;
+    animation-duration: 15s;
+    animation-delay: 2s;
+}
+.sakura-petal:nth-child(3) {
+    left: 35%;
+    animation-duration: 14s;
+    animation-delay: 4s;
+}
+.sakura-petal:nth-child(4) {
+    left: 50%;
+    animation-duration: 10s;
+    animation-delay: 1s;
+}
+.sakura-petal:nth-child(5) {
+    left: 65%;
+    animation-duration: 16s;
+    animation-delay: 3s;
+}
+.sakura-petal:nth-child(6) {
+    left: 80%;
+    animation-duration: 13s;
+    animation-delay: 5s;
+}
+.sakura-petal:nth-child(7) {
+    left: 90%;
+    animation-duration: 11s;
+    animation-delay: 0s;
 }
 
 /* HEADER */
 header {
-    padding: 80px 20px;
+    padding: 80px 20px 40px 20px;
+    background: rgba(255, 240, 245, 0.9);
+    box-shadow: 0 0 40px rgba(255, 182, 193, 0.7);
+    border-radius: 0 0 30px 30px;
+    text-align: center;
     animation: fadeDown 1.5s ease;
 }
 
 header h1 {
-    font-size: 3.5em;
-    text-shadow: 0 0 20px rgba(0,255,255,0.8);
+    font-size: 4em;
+    color: #d6336c;
+    text-shadow: 0 0 20px rgba(214, 51, 108, 0.9);
+    font-family: 'Brush Script MT', cursive;
 }
 
 header p {
-    font-size: 1.3em;
-    opacity: 0.9;
+    font-size: 1.6em;
+    font-weight: 600;
+    color: #7b3a42;
+    margin-top: 10px;
 }
 
-/* ANIMATIONS D'ENTRÉE */
+/* ANIMATION FADE DOWN */
 @keyframes fadeDown {
-    from {
-        opacity: 0;
-        transform: translateY(-40px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(-50px);}
+    to { opacity: 1; transform: translateY(0);}
 }
 
 /* VIDEO */
-.video iframe {
-    margin-top: 30px;
-    border-radius: 20px;
-    box-shadow: 0 0 40px rgba(0,0,0,0.8);
-    animation: zoomIn 1.5s ease;
+.video {
+    margin: 60px 0;
+    text-align: center;
 }
 
-@keyframes zoomIn {
-    from {
-        transform: scale(0.7);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
+.video iframe {
+    width: 85%;
+    max-width: 720px;
+    height: 405px;
+    border-radius: 30px;
+    box-shadow: 0 0 60px rgba(214, 51, 108, 0.8);
+    transition: transform 0.5s ease;
+}
+
+.video iframe:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 100px rgba(255, 105, 180, 1);
 }
 
 /* IMAGES */
 .images {
-    margin: 80px 0;
+    margin: 50px 0;
+}
+
+.images .gallery {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
 }
 
 .images img {
     width: 320px;
-    margin: 20px;
-    border-radius: 20px;
-    box-shadow: 0 0 25px rgba(0,0,0,0.7);
-    transition: transform 0.6s ease, box-shadow 0.6s ease;
+    border-radius: 25px;
+    box-shadow: 0 0 40px rgba(255, 105, 180, 0.7);
+    transition: transform 0.5s, box-shadow 0.5s;
+    cursor: pointer;
 }
 
 .images img:hover {
-    transform: scale(1.15) rotate(2deg);
-    box-shadow: 0 0 50px rgba(0,255,255,0.8);
+    transform: scale(1.15) rotate(5deg);
+    box-shadow: 0 0 70px rgba(255, 20, 147, 0.9);
 }
 
-/* TITRES DE SECTIONS */
-h2 {
+/* CULTURE */
+.culture {
+    background: rgba(255, 240, 245, 0.9);
+    padding: 60px 30px;
+    margin: 50px auto;
+    max-width: 850px;
+    border-radius: 40px;
+    box-shadow: 0 0 40px rgba(214, 51, 108, 0.6);
+    color: #631d3f;
+    font-size: 1.3em;
+    font-weight: 600;
+    line-height: 1.7em;
+    text-align: justify;
+    text-shadow: 0 0 3px rgba(255, 182, 193, 0.6);
+}
+
+.culture h2 {
+    color: #d6336c;
     font-size: 2.4em;
-    margin-bottom: 30px;
-    text-shadow: 0 0 15px rgba(0,255,255,0.6);
+    margin-bottom: 25px;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(255, 105, 180, 0.8);
 }
 
 /* FOOTER */
 footer {
-    padding: 30px;
-    background: rgba(0,0,0,0.5);
-    margin-top: 80px;
-    animation: fadeUp 2s ease;
-}
-
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    padding: 35px;
+    background: #d6336c;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 0 20px rgba(214, 51, 108, 0.8);
 }
