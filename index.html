@@ -1,252 +1,113 @@
-/* ======================= RESET ======================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-}
+<!DOCTYPE html>
+<html lang="fr">
 
-/* ======================= BODY & HERO ======================= */
-body {
-    line-height: 1.6;
-    color: #333;
-    background-color: #f9f9f9;
-}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Voyage au Japon</title>
+</head>
 
-.hero {
-    position: relative;
-    height: 100vh;
-    overflow: hidden;
-}
+<body>
+    <header>
+        <h1>Voyage au Japon</h1>
+        <p>Entre traditions ancestrales et modernité</p>
+    </header>
 
-.video-bg iframe {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-}
+    <div id="centre">
+        <aside>
+            <nav>
+                <h3>Menu</h3>
+                <ul>
+                    <li><a href="#histoire">Histoire & Traditions</a></li>
+                    <li><a href="#lieux">Lieux touristiques</a></li>
+                    <li><a href="#nourriture">Nourriture</a></li>
+                    <li><a href="#culture">Culture</a></li>
+                    <li><a href="#contact">Contacts</a></li>
+                </ul>
+            </nav>
+        </aside>
 
-.hero-overlay {
-    position: relative;
-    color: #fff;
-    text-align: center;
-    padding-top: 100px;
-    background: rgba(0,0,0,0.4);
-}
+        <main>
+            <!-- Histoire et traditions -->
+            <section id="histoire">
+                <h2>Histoire et traditions</h2>
+                <p>
+                    Le Japon possède une histoire riche de plusieurs millénaires. Des samouraïs aux empereurs,
+                    les traditions occupent encore une place très importante dans la vie quotidienne.
+                </p>
+                <p>
+                    Les temples, les sanctuaires shintoïstes, les cérémonies du thé et les festivals traditionnels
+                    témoignent de ce profond respect du passé.
+                </p>
+            </section>
 
-/* ======================= NAVIGATION ======================= */
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 50px;
-    background: rgba(0,0,0,0.7);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 999;
-}
+            <!-- Lieux touristiques -->
+            <section id="lieux">
+                <h2>Lieux touristiques</h2>
+                <p>
+                    Le Japon offre des paysages variés et spectaculaires :
+                </p>
+                <ul>
+                    <li>Tokyo et sa modernité impressionnante</li>
+                    <li>Kyoto et ses temples traditionnels</li>
+                    <li>Le Mont Fuji, symbole du pays</li>
+                    <li>Osaka et son ambiance dynamique</li>
+                </ul>
+            </section>
 
-nav .logo {
-    font-family: 'Oswald', sans-serif;
-    font-size: 1.8rem;
-    color: #fff;
-}
+            <!-- Nourriture -->
+            <section id="nourriture">
+                <h2>Nourriture</h2>
+                <p>
+                    La cuisine japonaise est réputée dans le monde entier pour sa finesse et sa diversité.
+                </p>
+                <ul>
+                    <li>Sushis et sashimis</li>
+                    <li>Ramen et udon</li>
+                    <li>Tempura</li>
+                    <li>Okonomiyaki</li>
+                </ul>
+            </section>
 
-nav .logo span {
-    color: #fdd835;
-}
+            <!-- Culture -->
+            <section id="culture">
+                <h2>Culture</h2>
+                <p>
+                    La culture japonaise mêle traditions anciennes et innovations modernes.
+                </p>
+                <p>
+                    Mangas, animés, arts martiaux, respect des règles et nouvelles technologies font partie
+                    intégrante du quotidien japonais.
+                </p>
+            </section>
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
+            <!-- Contacts -->
+            <section id="contact">
+                <h2>Contacts</h2>
+                <p>
+                    Vous souhaitez organiser un voyage au Japon ? Contactez-nous via le formulaire ci-dessous.
+                </p>
 
-nav ul li {
-    position: relative;
-}
+                <form action="mailto:exemple@exemple.com" method="post" enctype="text/plain">
+                    <label for="nom">Nom et Prénom :</label>
+                    <input type="text" id="nom" name="Nom" required>
 
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-    padding: 10px 15px;
-    display: block;
-    transition: 0.3s;
-}
+                    <label for="email">Email :</label>
+                    <input type="email" id="email" name="Email" required>
 
-nav ul li a:hover {
-    background: #fdd835;
-    color: #000;
-    border-radius: 5px;
-}
+                    <label for="message">Votre message :</label>
+                    <textarea id="message" name="Message" rows="5" required></textarea>
 
-/* ======================= SOUS-MENU ======================= */
-nav ul li ul.submenu {
-    display: none;
-    position: absolute;
-    top: 40px;
-    left: 0;
-    background: rgba(0,0,0,0.9);
-    padding: 10px 0;
-    border-radius: 5px;
-    min-width: 150px;
-    z-index: 1000;
-    flex-direction: column;
-}
+                    <button type="submit">Envoyer</button>
+                </form>
+            </section>
+        </main>
+    </div>
 
-nav ul li ul.submenu li {
-    width: 100%;
-}
+    <footer>
+        <p>&copy; 2026 - Voyage au Japon</p>
+    </footer>
+</body>
 
-nav ul li ul.submenu li a {
-    padding: 10px 20px;
-    width: 100%;
-}
-
-nav ul li:hover ul.submenu {
-    display: flex;
-}
-
-/* ======================= SECTIONS ======================= */
-.section-padding {
-    padding: 80px 50px;
-}
-
-.dark-bg {
-    background: #222;
-    color: #fff;
-}
-
-.accent-bg {
-    background: #fdd835;
-    color: #000;
-}
-
-.container {
-    max-width: 1200px;
-    margin: auto;
-}
-
-.big-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.8rem;
-    margin-bottom: 40px;
-    text-align: center;
-}
-
-.white {
-    color: #fff;
-}
-
-/* ======================= SUB-SECTIONS ======================= */
-.sub-section {
-    margin-bottom: 60px;
-}
-
-.sub-section h3 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-}
-
-/* ======================= GRIDS ======================= */
-.grid-2 {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.text-rich {
-    flex: 1;
-}
-
-.image-decor {
-    flex: 1;
-    min-height: 250px;
-    background-size: cover;
-    background-position: center;
-    border-radius: 10px;
-}
-
-/* Images spécifiques */
-.culture-img {
-    background-image: url('https://images.unsplash.com/photo-1596128207005-3d64f67c86f7?auto=format&fit=crop&w=600');
-}
-
-.traditions-img {
-    background-image: url('https://images.unsplash.com/photo-1549692520-acc6669e2f0c?auto=format&fit=crop&w=600');
-}
-
-.geo-img {
-    background-image: url('https://images.unsplash.com/photo-1549693578-d683be217e58?auto=format&fit=crop&w=600');
-}
-
-/* ======================= BUTTON ======================= */
-.btn-main {
-    display: inline-block;
-    background: #fdd835;
-    color: #000;
-    padding: 12px 30px;
-    text-decoration: none;
-    font-weight: 700;
-    border-radius: 5px;
-    transition: 0.3s;
-    margin-top: 20px;
-}
-
-.btn-main:hover {
-    background: #ffc107;
-}
-
-/* ======================= CONTACT ======================= */
-.contact-box {
-    max-width: 700px;
-    margin: auto;
-}
-
-.contact-box form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.contact-box input, .contact-box select, .contact-box textarea {
-    padding: 12px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    width: 100%;
-}
-
-.contact-box button {
-    cursor: pointer;
-}
-
-/* ======================= FOOTER ======================= */
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #111;
-    color: #fff;
-}
-
-/* ======================= RESPONSIVE ======================= */
-@media(max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        background: rgba(0,0,0,0.9);
-        position: fixed;
-        width: 100%;
-        left: -100%;
-        top: 70px;
-        transition: 0.3s;
-        padding: 20px;
-    }
-    nav ul li:hover ul.submenu {
-        position: static;
-    }
-    .grid-2 {
-        flex-direction: column;
-    }
-}
+</html>
